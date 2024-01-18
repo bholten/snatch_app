@@ -1,0 +1,16 @@
+{application, snatch_app,
+ [{description, "An OTP application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {snatch_app_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    snatch
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["Apache-2.0"]},
+  {links, []}
+ ]}.
