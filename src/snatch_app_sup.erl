@@ -9,17 +9,18 @@ start_link() ->
 
 init([]) ->
     ChildSpec = [
-        #{id => snatch_app_example_listener_sup,
-          start => {snatch_app_example_listener_sup, start_link, []},
+        #{id => snatch_app_example_listener,
+          start => {snatch_app_example_listener, start_link, []},
           restart => permanent,
           shutdown => 5000,
           type => worker,
-          modules => [snatch_app_example_listener_sup]},
-        #{id => snatch_app_sqs_sup,
-          start => {snatch_app_sqs_sup, start_link, []},
+          modules => [snatch_app_example_listener]},
+        #{id => claws_aws_sqs,
+          start => {claws_aws_sqs, start_link, ["000000000000/LocalSQSQueue"]},
           restart => permanent,
           shutdown => 5000,
-          type => worker}
+          type => worker,
+          modules => [claws_aws_sqs]}
     ],
     {ok, {{one_for_one, 5, 10}, ChildSpec}}.
 
