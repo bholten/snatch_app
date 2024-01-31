@@ -24,7 +24,11 @@ resources:
     SQSQueue:
       Type: AWS::SQS::Queue
       Properties:
-        QueueName: LocalSQSQueue
+        QueueName: LocalSQSQueue1
+    SQSQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: LocalSQSQueue2
     SNSQueue:
       Type: AWS::SQS::Queue
       Properties:
