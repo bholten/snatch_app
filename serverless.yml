@@ -21,15 +21,15 @@ custom:
 
 resources:
   Resources:
-    SQSQueue:
+    SQSQueue1:
       Type: AWS::SQS::Queue
       Properties:
         QueueName: LocalSQSQueue1
-    SQSQueue:
+    SQSQueue2:
       Type: AWS::SQS::Queue
       Properties:
         QueueName: LocalSQSQueue2
-    SNSQueue:
+    SNSQueue3:
       Type: AWS::SQS::Queue
       Properties:
         QueueName: LocalSNSQueue
