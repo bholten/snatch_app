@@ -11,9 +11,9 @@
 start_link() ->
     gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
 
-init(Args) ->
-    _Pid = spawn_link(snatch, start_link, [claws_aws_sqs, self()]),
-    {ok, Args}.
+init([]) ->
+    _ = spawn_link(snatch, start_link, [claws_aws_sqs, self()]),
+    {ok, []}.
 
 handle_call(_Request, _From, State) ->
     {reply, ok, State}.
