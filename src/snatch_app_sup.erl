@@ -16,7 +16,7 @@ init([]) ->
           type => worker,
           modules => [snatch_app_example_listener]},
         #{id => claws_aws_sqs_1,
-          start => {claws_aws_sqs, start_link, [["000000000000/LocalSQSQueue1"]]},
+          start => {claws_aws_sqs, start_link, [["000000000000/LocalSQSQueue1", "000000000000/LocalSQSQueue2"]]},
           restart => permanent,
           shutdown => 5000,
           type => worker,
