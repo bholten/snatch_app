@@ -5,6 +5,7 @@
   {mod, {snatch_app_app, []}},
   {applications,
    [kernel,
+    lager,
     stdlib,
     snatch
    ]},
